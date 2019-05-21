@@ -25,6 +25,6 @@ hs_err_pid*
 
 #Java
 bin/
+.settings/
 *.classpath
 *.project
-.settings/
