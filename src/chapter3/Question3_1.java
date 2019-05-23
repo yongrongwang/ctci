@@ -1,7 +1,8 @@
 package chapter3;
 
 /**
- * @author yongrong 一个数组实现三个栈，分配大小可以固定
+ * @author yongrong 
+ * 一个数组实现三个栈，分配大小可以固定
  */
 public class Question3_1 {
     static int stackSize = 100;
