@@ -4,8 +4,8 @@ import ctciLibrary.LinkedListNode;
 
 /**
  * @author yongrong
- * 编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前给定一个链表的头指针 ListNode* pHead，
- * 请返回重新排列后的链表的头指针。注意：分割以后保持原来的数据顺序不变。
+ * 编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前给定一个链表的头指针 ListNode* pHead，请返回重新排列后的
+ * 链表的头指针。注意：分割以后保持原来的数据顺序不变。
  */
 public class Question2_4 {
     /**
@@ -23,7 +23,7 @@ public class Question2_4 {
         while (pHead != null) {
             LinkedListNode next = pHead.next;
             pHead.next = null;
-            //将大于x的节点插入到before链表
+            // 将大于x的节点插入到before链表
             if (pHead.data < x) {
                 if (beforeStart == null) {
                     beforeStart = pHead;
@@ -33,7 +33,7 @@ public class Question2_4 {
                     beforeEnd = beforeEnd.next;
                 }
             }
-            //将小于x的节点插入到after链表
+            // 将小于x的节点插入到after链表
             else {
                 if (afterStart == null) {
                     afterStart = pHead;
@@ -48,7 +48,7 @@ public class Question2_4 {
 
         if (beforeStart == null)
             return afterStart;
-        //拼接两个链表
+        // 拼接两个链表
         beforeEnd.next = afterStart;
         return beforeStart;
     }
@@ -77,7 +77,7 @@ public class Question2_4 {
 
         if (beforeStart == null)
             return afterStart;
-        //定位到before链表的末尾
+        // 定位到before链表的末尾
         LinkedListNode beforeEnd = beforeStart;
         while (beforeEnd.next != null)
             beforeEnd = beforeEnd.next;
@@ -108,7 +108,7 @@ public class Question2_4 {
             pHead = next;
         }
 
-        //拼接两个链表
+        // 拼接两个链表
         tail.next = null;
 
         return head;

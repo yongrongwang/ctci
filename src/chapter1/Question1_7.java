@@ -4,15 +4,15 @@ import ctciLibrary.AsSortedMethods;
 
 /**
  * @author yongrong
- * Çë±àÐ´Ò»¸öËã·¨£¬ÈôN½×·½ÕóÖÐÄ³¸öÔªËØÎª0£¬Ôò½«ÆäËùÔÚµÄÐÐÓëÁÐÇåÁã¡£¸ø¶¨Ò»¸öN½×·½Õóint[][](C++ÖÐÎªvector<vector><int>>)matºÍ¾ØÕóµÄ½×Êýn£¬
- * Çë·µ»ØÍê³É²Ù×÷ºóµÄint[][]·½Õó(C++ÖÐÎªvector<vector><int>>)£¬±£Ö¤nÐ¡ÓÚµÈÓÚ300£¬¾ØÕóÖÐµÄÔªËØÎªint·¶Î§ÄÚ¡£</int></vector></int></vector>
+ * è¯·ç¼–å†™ä¸€ä¸ªç®—æ³•ï¼Œè‹¥Né˜¶æ–¹é˜µä¸­æŸä¸ªå…ƒç´ ä¸º0ï¼Œåˆ™å°†å…¶æ‰€åœ¨çš„è¡Œä¸Žåˆ—æ¸…é›¶ã€‚ç»™å®šä¸€ä¸ªNé˜¶æ–¹é˜µint[][](C++ä¸­ä¸ºvector<vector><int>>)matå’ŒçŸ©é˜µçš„é˜¶æ•°nï¼Œè¯·è¿”
+ * å›žå®Œæˆæ“ä½œåŽçš„int[][]æ–¹é˜µ(C++ä¸­ä¸ºvector<vector><int>>)ï¼Œä¿è¯nå°äºŽç­‰äºŽ300ï¼ŒçŸ©é˜µä¸­çš„å…ƒç´ ä¸ºintèŒƒå›´å†…ã€‚</int></vector></int></vector>
  */
 public class Question1_7 {
     /**
-     * µÚÒ»´Î±éÀú·Ö±ðÓÃÁ½¸öÊý×é¼ÇÂ¼°üº¬ÁãÔªËØµÄÐÐºÍÁÐ£¬µÚ¶þ´Î±éÀú½«ÏàÓ¦µÄÐÐºÍÁÐ±ê¼ÇÎªÁã
-     * @param mat ÊäÈëµÄ¾ØÕó
-     * @param n ¾ØÕóµÄ½×Êý
-     * @return ÇåÁãºóµÄ¾ØÕó
+     * ç¬¬ä¸€æ¬¡éåŽ†æ•°ç»„è®°å½•åŒ…å«é›¶å…ƒç´ çš„æ‰€æœ‰è¡Œå’Œåˆ—ï¼Œç¬¬äºŒæ¬¡éåŽ†æ•°ç»„çš„æ—¶å€™å°†æ‰€åœ¨è¡Œå’Œåˆ—æ¸…é›¶
+     * @param mat çŸ©é˜µ
+     * @param n 
+     * @return 
      */
     public static int[][] clearZero(int[][] mat, int n) {
         boolean[] rows = new boolean[n];

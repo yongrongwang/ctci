@@ -2,8 +2,9 @@ package chapter1;
 
 /**
  * @author yongrong
- * ¼Ù¶¨ÎÒÃÇ¶¼ÖªµÀ·Ç³£¸ßÐ§µÄËã·¨À´¼ì²éÒ»¸öµ¥´ÊÊÇ·ñÎªÆäËû×Ö·û´®µÄ×Ó´®¡£Çë½«Õâ¸öËã·¨±àÐ´³ÉÒ»¸öº¯Êý£¬¸ø¶¨Á½¸ö×Ö·û´®s1ºÍs2£¬Çë±àÐ´´úÂë¼ì²és2ÊÇ·ñÎªs1Ðý×ª¶ø³É£¬
- * ÒªÇóÖ»ÄÜµ÷ÓÃÒ»´Î¼ì²é×Ó´®µÄº¯Êý¡£¸ø¶¨Á½¸ö×Ö·û´®s1,s2,Çë·µ»ØboolÖµ´ú±ís2ÊÇ·ñÓÉs1Ðý×ª¶ø³É¡£×Ö·û´®ÖÐ×Ö·ûÎªÓ¢ÎÄ×ÖÄ¸ºÍ¿Õ¸ñ£¬Çø·Ö´óÐ¡Ð´£¬×Ö·û´®³¤¶ÈÐ¡ÓÚµÈÓÚ1000¡£
+ * å‡å®šæˆ‘ä»¬éƒ½çŸ¥é“éžå¸¸é«˜æ•ˆçš„ç®—æ³•æ¥æ£€æŸ¥ä¸€ä¸ªå•è¯æ˜¯å¦ä¸ºå…¶ä»–å­—ç¬¦ä¸²çš„å­ä¸²ã€‚è¯·å°†è¿™ä¸ªç®—æ³•ç¼–å†™æˆä¸€ä¸ªå‡½æ•°ï¼Œç»™å®šä¸¤ä¸ªå­—ç¬¦ä¸²s1å’Œs2ï¼Œè¯·ç¼–å†™ä»£ç æ£€æŸ¥s2æ˜¯å¦ä¸ºs1æ—‹è½¬
+ * è€Œæˆï¼Œè¦æ±‚åªèƒ½è°ƒç”¨ä¸€æ¬¡æ£€æŸ¥å­ä¸²çš„å‡½æ•°ã€‚ç»™å®šä¸¤ä¸ªå­—ç¬¦ä¸²s1,s2,è¯·è¿”å›žboolå€¼ä»£è¡¨s2æ˜¯å¦ç”±s1æ—‹è½¬è€Œæˆã€‚å­—ç¬¦ä¸²ä¸­å­—ç¬¦ä¸ºè‹±æ–‡å­—æ¯å’Œç©ºæ ¼ï¼ŒåŒºåˆ†å¤§å°å†™ï¼Œå­—ç¬¦ä¸²
+ * é•¿åº¦å°äºŽç­‰äºŽ1000ã€‚
  */
 public class Question1_8 {
     public static boolean isSubstring(String big, String small) {
@@ -15,10 +16,10 @@ public class Question1_8 {
     }
 
     /**
-     * s1=xy£¬s2=yx£¬Ôò½«Á½¸ös1=xyÆ´½ÓºóµÃµ½s1s1=xyxy£¬ÅÐ¶Ïs2=yxÊÇ·ñÊÇs1s1=xyxyµÄ×Ó´®
-     * @param s1 ×Ö·û´®s1
-     * @param s2 ×Ö·û´´s2
-     * @return s2ÊÇ·ñÓÉs1Ðý×ª¶ø³É
+     * s1=xyï¼Œs2=yxï¼Œæ‰€ä»¥s2=yxæ˜¯s1s1=xyxyå­ä¸²
+     * @param s1 
+     * @param s2 
+     * @return 
      */
     public static boolean checkReverseEqual(String s1, String s2) {
         if (s1 == null || s2 == null || s1.length() != s2.length() || s1.length() == 0)

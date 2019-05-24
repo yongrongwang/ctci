@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /**
  * @author yongrong
- * ¸ø¶¨Á½¸ö×Ö·û´®£¬Çë±àĞ´³ÌĞò£¬È·¶¨ÆäÖĞÒ»¸ö×Ö·û´®µÄ×Ö·ûÖØĞÂÅÅÁĞºó£¬ÄÜ·ñ±ä³ÉÁíÒ»¸ö×Ö·û´®¡£ÕâÀï¹æ¶¨´óĞ¡Ğ´Îª²»Í¬×Ö·û£¬ÇÒ¿¼ÂÇ×Ö·û´®ÖĞµÄ¿Õ¸ñ¡£¸ø¶¨Ò»¸östring
- * stringAºÍÒ»¸östring stringB£¬Çë·µ»ØÒ»¸öbool£¬´ú±íÁ½´®ÊÇ·ñÖØĞÂÅÅÁĞºó¿ÉÏàÍ¬¡£±£Ö¤Á½´®µÄ³¤¶È¶¼Ğ¡ÓÚµÈÓÚ5000¡£
+ * ç»™å®šä¸¤ä¸ªå­—ç¬¦ä¸²ï¼Œè¯·ç¼–å†™ç¨‹åºï¼Œç¡®å®šå…¶ä¸­ä¸€ä¸ªå­—ç¬¦ä¸²çš„å­—ç¬¦é‡æ–°æ’åˆ—åï¼Œèƒ½å¦å˜æˆå¦ä¸€ä¸ªå­—ç¬¦ä¸²ã€‚è¿™é‡Œè§„å®šå¤§å°å†™ä¸ºä¸åŒå­—ç¬¦ï¼Œä¸”è€ƒè™‘å­—ç¬¦ä¸²ä¸­çš„ç©ºæ ¼ã€‚ç»™å®šä¸€ä¸ª
+ * string stringAå’Œä¸€ä¸ªstring stringBï¼Œè¯·è¿”å›ä¸€ä¸ªboolï¼Œä»£è¡¨ä¸¤ä¸²æ˜¯å¦é‡æ–°æ’åˆ—åå¯ç›¸åŒã€‚ä¿è¯ä¸¤ä¸²çš„é•¿åº¦éƒ½å°äºç­‰äº5000ã€‚
  */
 public class Question1_3 {
 
@@ -15,8 +15,11 @@ public class Question1_3 {
         return new String(array);
     }
 
-    /*
-     * ÏÈÅÅĞò£¬È»ºó±È½ÏÅÅĞòºó×Ö·û´®
+    /**
+     * æ¯”è¾ƒæ’åºåçš„å­—ç¬¦ä¸²
+     * @param stringA
+     * @param stringB
+     * @return
      */
     public static boolean checkSam(String stringA, String stringB) {
         if (stringA == null || stringB == null || stringA.length() != stringB.length())
@@ -24,8 +27,11 @@ public class Question1_3 {
         return sort(stringA).equals(sort(stringB));
     }
 
-    /*
-     * ±È½ÏÁ½¸ö×Ö·û´®ÖĞÃ¿¸ö×Ö·û³öÏÖµÄ´ÎÊıÊÇ·ñÏàÍ¬
+    /**
+     * æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²ä¸­å­—ç¬¦å‡ºç°çš„æ¬¡æ•°
+     * @param stringA
+     * @param stringB
+     * @return
      */
     public static boolean checkSam2(String stringA, String stringB) {
         if (stringA == null || stringB == null || stringA.length() != stringB.length())

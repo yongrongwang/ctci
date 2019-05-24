@@ -2,8 +2,9 @@ package chapter1;
 
 /**
  * @author yongrong
- * ÀûÓÃ×Ö·ûÖØ¸´³öÏÖµÄ´ÎÊı£¬±àĞ´Ò»¸ö·½·¨£¬ÊµÏÖ»ù±¾µÄ×Ö·û´®Ñ¹Ëõ¹¦ÄÜ¡£±ÈÈç£¬×Ö·û´®¡°aabcccccaaa¡±¾­Ñ¹Ëõ»á±ä³É¡°a2b1c5a3¡±¡£ÈôÑ¹ËõºóµÄ×Ö·û´®Ã»ÓĞ±ä¶Ì£¬Ôò·µ»ØÔ­ÏÈµÄ×Ö·û´®¡£
- * ¸ø¶¨Ò»¸östring iniStringÎª´ıÑ¹ËõµÄ´®(³¤¶ÈĞ¡ÓÚµÈÓÚ10000)£¬±£Ö¤´®ÄÚ×Ö·û¾ùÓÉ´óĞ¡Ğ´Ó¢ÎÄ×ÖÄ¸×é³É£¬·µ»ØÒ»¸östring£¬ÎªËùÇóµÄÑ¹Ëõºó»òÎ´±ä»¯µÄ´®¡£
+ * åˆ©ç”¨å­—ç¬¦é‡å¤å‡ºç°çš„æ¬¡æ•°ï¼Œç¼–å†™ä¸€ä¸ªæ–¹æ³•ï¼Œå®ç°åŸºæœ¬çš„å­—ç¬¦ä¸²å‹ç¼©åŠŸèƒ½ã€‚æ¯”å¦‚ï¼Œå­—ç¬¦ä¸²â€œaabcccccaaaâ€ç»å‹ç¼©ä¼šå˜æˆâ€œa2b1c5a3â€ã€‚è‹¥å‹ç¼©åçš„å­—ç¬¦ä¸²æ²¡æœ‰å˜çŸ­ï¼Œåˆ™
+ * è¿”å›åŸå…ˆçš„å­—ç¬¦ä¸²ã€‚ç»™å®šä¸€ä¸ªstring iniStringä¸ºå¾…å‹ç¼©çš„ä¸²(é•¿åº¦å°äºç­‰äº10000)ï¼Œä¿è¯ä¸²å†…å­—ç¬¦å‡ç”±å¤§å°å†™è‹±æ–‡å­—æ¯ç»„æˆï¼Œè¿”å›ä¸€ä¸ªstringï¼Œä¸ºæ‰€æ±‚çš„å‹ç¼©
+ * åæˆ–æœªå˜åŒ–çš„ä¸²ã€‚
  */
 public class Question1_5 {
     public static int countZip(String str) {
@@ -28,9 +29,9 @@ public class Question1_5 {
     }
 
     /**
-     * ²ÉÓÃStringBufferÀ´±ÜÃâ·´¸´½øĞĞ×Ö·û´®Æ´½Ó²Ù×÷µÄµÍĞ§ÂÊ
-     * @param iniString ÊäÈëµÄ×Ö·û´®
-     * @return Ñ¹ËõºóµÄ×Ö·û´®
+     * ä½¿ç”¨StringBufferè¿›è¡Œæé«˜æ€§èƒ½
+     * @param iniString 
+     * @return 
      */
     public static String zipString(String iniString) {
         int size = countZip(iniString);
@@ -44,8 +45,8 @@ public class Question1_5 {
             if (iniString.charAt(i) == last) {
                 count++;
             } else {
-                buffer.append(last); // ²åÈë×Ö·û
-                buffer.append(count); // ²åÈëÁ¬ĞøÏàÍ¬µÄ×Ö·û¸öÊı
+                buffer.append(last); // æ’å…¥å­—ç¬¦
+                buffer.append(count); // æ’å…¥æ•°å­—
                 last = iniString.charAt(i);
                 count = 1;
             }
@@ -66,7 +67,7 @@ public class Question1_5 {
     }
 
     /**
-     * Èç¹û²»ÄÜÓÃStringBuffer£¬Ôò²ÉÓÃÊı×éÀ´±ÜÃâ·´¸´½øĞĞ×Ö·û´®Æ´½Ó²Ù×÷µÄµÍĞ§ÂÊ
+     * ä¸ä½¿ç”¨StringBufferæé«˜æ€§èƒ½ï¼Œç®—å‡ºå‹ç¼©åå­—ç¬¦ä¸²é•¿åº¦ï¼Œæ„å»ºç›¸åº”å¤§å°æ•°ç»„
      * @param iniString
      */
     public static String zipString2(String iniString) {

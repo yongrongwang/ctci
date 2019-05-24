@@ -4,16 +4,16 @@ import ctciLibrary.AsSortedMethods;
 
 /**
  * @author yongrong
- * ÓÐÒ»¸±ÓÉNxN¾ØÕó±íÊ¾µÄÍ¼Ïñ£¬ÕâÀïÃ¿¸öÏñËØÓÃÒ»¸öint±íÊ¾£¬Çë±àÐ´Ò»¸öËã·¨£¬ÔÚ²»Õ¼ÓÃ¶îÍâÄÚ´æ¿Õ¼äµÄÇé¿öÏÂ(¼´²»Ê¹ÓÃ»º´æ¾ØÕó)£¬½«Í¼ÏñË³Ê±ÕëÐý×ª90¶È¡£
- * ¸ø¶¨Ò»¸öNxNµÄ¾ØÕó£¬ºÍ¾ØÕóµÄ½×ÊýN,Çë·µ»ØÐý×ªºóµÄNxN¾ØÕó,±£Ö¤NÐ¡ÓÚµÈÓÚ500£¬Í¼ÏñÔªËØÐ¡ÓÚµÈÓÚ256¡£
+ * æœ‰ä¸€å‰¯ç”±NxNçŸ©é˜µè¡¨ç¤ºçš„å›¾åƒï¼Œè¿™é‡Œæ¯ä¸ªåƒç´ ç”¨ä¸€ä¸ªintè¡¨ç¤ºï¼Œè¯·ç¼–å†™ä¸€ä¸ªç®—æ³•ï¼Œåœ¨ä¸å ç”¨é¢å¤–å†…å­˜ç©ºé—´çš„æƒ…å†µä¸‹(å³ä¸ä½¿ç”¨ç¼“å­˜çŸ©é˜µ)ï¼Œå°†å›¾åƒé¡ºæ—¶é’ˆæ—‹è½¬90åº¦ã€‚ç»™å®š
+ * ä¸€ä¸ªNxNçš„çŸ©é˜µï¼Œå’ŒçŸ©é˜µçš„é˜¶æ•°N,è¯·è¿”å›žæ—‹è½¬åŽçš„NxNçŸ©é˜µ,ä¿è¯Nå°äºŽç­‰äºŽ500ï¼Œå›¾åƒå…ƒç´ å°äºŽç­‰äºŽ256ã€‚
  */
 
 public class Question1_6 {
     /**
-     * ´Ó×îÍâ²ã¿ªÊ¼£¬ÔÚÃ¿Ò»²ãÉÏ°´ÕÕË÷ÒýÒ»¸öÒ»¸ö½øÐÐ×ª»»
-     * @param mat ¾ØÕó
-     * @param n ¾ØÕó³¤
-     * @return Ðý×ªºóµÄ¾ØÕó
+     * ä»Žå¤–å‘å†…æŒ‰ç…§ç´¢å¼•ä¸€ä¸ªä¸€ä¸ªè¿›è¡Œäº¤æ¢
+     * @param mat 
+     * @param n 
+     * @return 
      */
     public static int[][] transformImage(int[][] mat, int n) {
         for (int layer = 0; layer < n / 2; layer++) {
@@ -21,15 +21,15 @@ public class Question1_6 {
             int last = n - 1 - layer;
             for (int i = first; i < last; i++) {
                 int offset = i - first;
-                // ´æ´¢ÉÏÃæ
+                // å­˜å‚¨ä¸Šè¾¹
                 int top = mat[first][i];
-                // ×óµ½ÉÏ
+                // å·¦åˆ°ä¸Š
                 mat[first][i] = mat[last - offset][first];
-                // ÏÂµ½×ó
+                // ä¸‹åˆ°å·¦
                 mat[last - offset][first] = mat[last][last - offset];
-                // ÓÒµ½ÏÂ
+                // å³åˆ°ä¸‹
                 mat[last][last - offset] = mat[i][last];
-                // ÉÏµ½ÓÒ
+                // ä¸Šåˆ°å³
                 mat[i][last] = top;
             }
         }

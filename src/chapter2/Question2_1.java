@@ -6,7 +6,7 @@ import ctciLibrary.LinkedListNode;
 
 /**
  * @author yongrong 
- * �Ƴ�δ���������е��ظ��ڵ�
+ * 移除未排序链表中重复节点
  */
 public class Question2_1 {
     /**
