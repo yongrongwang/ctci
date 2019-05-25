@@ -26,6 +26,23 @@ public class TreeNode {
         }
     }
 
+    public void insertInOrder(int d) {
+        if (d <= data) {
+            if (left == null) {
+                setLeftChild(new TreeNode(d));
+            } else {
+                left.insertInOrder(d);
+            }
+        } else {
+            if (right == null) {
+                setRightChild(new TreeNode(d));
+            } else {
+                right.insertInOrder(d);
+            }
+        }
+        size++;
+    }
+
     public static TreeNode createMinimalBST(int[] arr, int start, int end) {
         if (end < start) {
             return null;
