@@ -1,7 +1,6 @@
 package chapter2;
 
-import ctciLibrary.AsSortedMethods;
-import ctciLibrary.LinkedListNode;
+import ctciLibrary.ListNode;
 
 /**
  * @author yongrong
@@ -16,17 +15,17 @@ public class Question2_5 {
      * @param carry 低位进位值
      * @return 求和后的链表
      */
-    public static LinkedListNode addLists(LinkedListNode a, LinkedListNode b, int carry) {
+    public static ListNode addLists(ListNode a, ListNode b, int carry) {
         if (a == null && b == null && carry == 0)
             return null;
 
-        LinkedListNode current = new LinkedListNode();
+        ListNode current = new ListNode(-1);
         int value = carry;
         if (a != null)
-            value += a.data;
+            value += a.val;
         if (b != null)
-            value += b.data;
-        current.data = value % 10;
+            value += b.val;
+        current.val = value % 10;
         current.next = addLists(a == null ? null : a.next, b == null ? null : b.next, value < 10 ? 0 : 1);
         return current;
     }
@@ -36,21 +35,24 @@ public class Question2_5 {
      * @param b 链表b
      * @return 求和后的链表
      */
-    public static LinkedListNode plusAB(LinkedListNode a, LinkedListNode b) {
+    public static ListNode plusAB(ListNode a, ListNode b) {
         if (a == null && b == null)
             return null;
-
         return addLists(a, b, 0);
     }
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        LinkedListNode a = AsSortedMethods.randomLinkedList(3, 0, 10);
-        System.out.println("a = " + a.forward());
-        LinkedListNode b = AsSortedMethods.randomLinkedList(6, 0, 10);
-        System.out.println("b = " + b.forward());
-        LinkedListNode sum = plusAB(a, b);
-        System.out.println("sum = " + sum.forward());
+        int aLength = 3;
+        ListNode[] aNodes = ListNode.randomListNodes(aLength, 0, 10);
+        ListNode a = ListNode.buildList(aNodes, aLength);
+        System.out.println("a = " + a.printForward());
+        int bLength = 3;
+        ListNode[] bNodes = ListNode.randomListNodes(bLength, 0, 10);
+        ListNode b = ListNode.buildList(bNodes, bLength);
+        System.out.println("b = " + b.printForward());
+        ListNode sum = plusAB(a, b);
+        System.out.println("sum = " + sum.printForward());
     }
 
 }

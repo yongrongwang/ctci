@@ -1,5 +1,8 @@
 package chapter4;
 
+import ctciLibrary.ListNode;
+import ctciLibrary.TreeNode;
+
 /**
  * @author yr
  * 对于一棵二叉树，请设计一个算法，创建含有某一深度上所有结点的链表。给定二叉树的根结点指针TreeNode* root，以及链表上结点的深度，请返回一个
@@ -8,7 +11,8 @@ package chapter4;
 public class Question4_4 {
 
     public static ListNode getTreeLevel(TreeNode root, int dep) {
-
+        ListNode node = new ListNode(0);
+        return node;
     }
 
     public static void main(String[] args) {

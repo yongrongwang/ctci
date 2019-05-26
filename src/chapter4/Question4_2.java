@@ -1,8 +1,9 @@
 package chapter4;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+
+import ctciLibrary.UndirectedGraphNode;
 
 /**
  * @author yr
@@ -70,14 +71,4 @@ public class Question4_2 {
         System.out.println("check path: " + checkPath(nodes[0], nodes[n - 1]));
     }
 
-}
-
-class UndirectedGraphNode {
-    // 表示结点数值
-    int label = 0;
-    ArrayList<UndirectedGraphNode> neighbors = new ArrayList<UndirectedGraphNode>();
-
-    public UndirectedGraphNode(int label) {
-        this.label = label;
-    }
 }

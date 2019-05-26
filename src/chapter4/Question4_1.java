@@ -70,19 +70,14 @@ public class Question4_1 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        int n = 10;
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = i;
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
+        int length = 10;
+        int[] arr = TreeNode.sortedArray(length);
         TreeNode root = TreeNode.createMinimalBST(arr, 0, arr.length - 1);
-        System.out.println("root: " + root.data);
+        System.out.println("root: " + root.val);
         System.out.println("Is balanced? " + isBalance(root) + " " + isBalanced2(root));
 
-        root.insertInOrder(9);
-        System.out.println("root: " + root.data);
+        TreeNode.insertInOrder(root, 9);
+        System.out.println("root: " + root.val);
         System.out.println("Is balanced? " + isBalance(root) + " " + isBalanced2(root));
     }
 

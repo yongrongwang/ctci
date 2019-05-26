@@ -1,7 +1,6 @@
 package chapter2;
 
-import ctciLibrary.AsSortedMethods;
-import ctciLibrary.LinkedListNode;
+import ctciLibrary.ListNode;
 
 /**
  * @author yongrong
@@ -13,21 +12,23 @@ public class Question2_3 {
      * @param pNode 待删除的节点
      * @return 是否成功删除节点
      */
-    public static boolean removeNode(LinkedListNode pNode) {
+    public static boolean removeNode(ListNode pNode) {
         if (pNode == null || pNode.next == null)
             return false;
-        LinkedListNode next = pNode.next;
-        pNode.data = next.data;
+        ListNode next = pNode.next;
+        pNode.val = next.val;
         pNode.next = next.next;
         return true;
     }
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        LinkedListNode head = AsSortedMethods.randomLinkedList(10, 0, 10);
-        System.out.println(head.forward());
+        int length = 10;
+        ListNode[] nodes = ListNode.randomListNodes(length, 1, length);
+        ListNode head = ListNode.buildList(nodes, length);
+        System.out.println(head.printForward());
         removeNode(head.next.next.next);
-        System.out.println(head.forward());
+        System.out.println(head.printForward());
     }
 
 }

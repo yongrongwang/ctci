@@ -1,6 +1,7 @@
 package chapter2;
 
-import ctciLibrary.LinkedListNode;
+import ctciLibrary.AsSortedMethods;
+import ctciLibrary.ListNode;
 
 /**
  * @author yongrong
@@ -14,17 +15,17 @@ public class Question2_4 {
      * @param x 给定的基准值x
      * @return 重新排列后的链表的头指针
      */
-    public static LinkedListNode partition(LinkedListNode pHead, int x) {
-        LinkedListNode beforeStart = null;
-        LinkedListNode beforeEnd = null;
-        LinkedListNode afterStart = null;
-        LinkedListNode afterEnd = null;
+    public static ListNode partition(ListNode pHead, int x) {
+        ListNode beforeStart = null;
+        ListNode beforeEnd = null;
+        ListNode afterStart = null;
+        ListNode afterEnd = null;
 
         while (pHead != null) {
-            LinkedListNode next = pHead.next;
+            ListNode next = pHead.next;
             pHead.next = null;
             // 将大于x的节点插入到before链表
-            if (pHead.data < x) {
+            if (pHead.val < x) {
                 if (beforeStart == null) {
                     beforeStart = pHead;
                     beforeEnd = pHead;
@@ -59,13 +60,13 @@ public class Question2_4 {
      * @param x 给定的基准值x
      * @return 重新排列后的链表的头指针
      */
-    public static LinkedListNode partition2(LinkedListNode pHead, int x) {
-        LinkedListNode beforeStart = null;
-        LinkedListNode afterStart = null;
+    public static ListNode partition2(ListNode pHead, int x) {
+        ListNode beforeStart = null;
+        ListNode afterStart = null;
 
         while (pHead != null) {
-            LinkedListNode next = pHead.next;
-            if (pHead.data < x) {
+            ListNode next = pHead.next;
+            if (pHead.val < x) {
                 pHead.next = beforeStart;
                 beforeStart = pHead;
             } else {
@@ -78,7 +79,7 @@ public class Question2_4 {
         if (beforeStart == null)
             return afterStart;
         // 定位到before链表的末尾
-        LinkedListNode beforeEnd = beforeStart;
+        ListNode beforeEnd = beforeStart;
         while (beforeEnd.next != null)
             beforeEnd = beforeEnd.next;
         beforeEnd.next = afterStart;
@@ -92,13 +93,13 @@ public class Question2_4 {
      * @param x 给定的基准值x
      * @return 重新排列后的链表的头指针
      */
-    public static LinkedListNode partition3(LinkedListNode pHead, int x) {
-        LinkedListNode head = pHead;
-        LinkedListNode tail = pHead;
+    public static ListNode partition3(ListNode pHead, int x) {
+        ListNode head = pHead;
+        ListNode tail = pHead;
 
         while (pHead != null) {
-            LinkedListNode next = pHead.next;
-            if (pHead.data < x) {
+            ListNode next = pHead.next;
+            if (pHead.val < x) {
                 pHead.next = head;
                 head = pHead;
             } else {
@@ -116,29 +117,14 @@ public class Question2_4 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        int[] vals = { 1, 4, 10, 9, 6, 3, 8, 2, 12 };
-        int x = 6;
-        LinkedListNode head = new LinkedListNode(vals[0], null, null);
-        LinkedListNode current = head;
-        for (int i = 1; i < vals.length; i++)
-            current = new LinkedListNode(vals[i], null, current);
-        LinkedListNode head2 = head.clone();
-        LinkedListNode head3 = head.clone();
-
-        System.out.println(head.forward());
-        LinkedListNode start = partition(head, x);
+        int length = 10;
+        int x = AsSortedMethods.randomIntInRange(1, length);
+        ListNode[] nodes = ListNode.randomListNodes(length, 1, length);
+        ListNode head = ListNode.buildList(nodes, length);
+        System.out.println(head.printForward());
         System.out.println("Pation is " + x);
-        System.out.println(start.forward());
-        System.out.println();
-        System.out.println(head2.forward());
-        LinkedListNode start2 = partition2(head2, x);
-        System.out.println("Pation is " + x);
-        System.out.println(start2.forward());
-        System.out.println();
-        System.out.println(head3.forward());
-        LinkedListNode start3 = partition3(head3, x);
-        System.out.println("Pation is " + x);
-        System.out.println(start3.forward());
+        ListNode start = partition(head, x);
+        System.out.println(start.printForward());
     }
 
 }

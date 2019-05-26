@@ -1,7 +1,7 @@
 package chapter2;
 
 import ctciLibrary.AsSortedMethods;
-import ctciLibrary.LinkedListNode;
+import ctciLibrary.ListNode;
 
 /**
  * @author yongrong
@@ -15,9 +15,9 @@ public class Question2_6 {
      * @param pHead 链表头结点
      * @return 环路入口结点
      */
-    public static LinkedListNode FindBeginning(LinkedListNode head) {
-        LinkedListNode slow = head;
-        LinkedListNode fast = head;
+    public static ListNode FindBeginning(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
 
         // 找到相遇结点
         while (fast != null && fast.next != null) {
@@ -42,17 +42,18 @@ public class Question2_6 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        int length = 100;
-        int k = AsSortedMethods.randomIntInRange(1, 100);
-        LinkedListNode[] nodes = new LinkedListNode[length];
-
-        for (int i = 0; i < length; i++)
-            nodes[i] = new LinkedListNode(i, null, i == 0 ? null : nodes[i - 1]);
+        int length = 10;
+        int k = AsSortedMethods.randomIntInRange(1, length);
+        ListNode[] nodes = ListNode.sortedListNodes(length);
+        for (int i = 0; i < length; i++) {
+            nodes[i].next = ((i != length - 1) ? nodes[i + 1] : null);
+        }
         nodes[length - 1].next = nodes[k - 1];
-        LinkedListNode beginning = FindBeginning(nodes[0]);
+        ListNode head = nodes[0];
+        ListNode beginning = FindBeginning(head);
         System.out.println("k = " + k);
         if (beginning != null) {
-            System.out.println("Beginning of cycle is " + beginning.data);
+            System.out.println("Beginning of cycle is " + beginning.val);
         } else {
             System.out.println("No cycles");
         }

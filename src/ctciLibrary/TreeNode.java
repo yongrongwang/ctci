@@ -1,56 +1,46 @@
 package ctciLibrary;
 
 public class TreeNode {
-    public int data;
-    public TreeNode parent;
-    public TreeNode left;
-    public TreeNode right;
-    private int size;
+    public int val = 0;
+    public TreeNode left = null;
+    public TreeNode right = null;
 
-    public TreeNode(int data) {
-        this.data = data;
-        this.size = 1;
+    public TreeNode(int val) {
+        this.val = val;
     }
 
-    public void setLeftChild(TreeNode left) {
-        this.left = left;
-        if (left != null) {
-            left.parent = this;
+    public static int[] sortedArray(int length) {
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = i;
         }
+        return arr;
     }
 
-    public void setRightChild(TreeNode right) {
-        this.right = right;
-        if (right != null) {
-            right.parent = this;
-        }
-    }
-
-    public void insertInOrder(int d) {
-        if (d <= data) {
-            if (left == null) {
-                setLeftChild(new TreeNode(d));
-            } else {
-                left.insertInOrder(d);
-            }
-        } else {
-            if (right == null) {
-                setRightChild(new TreeNode(d));
-            } else {
-                right.insertInOrder(d);
-            }
-        }
-        size++;
-    }
-
-    public static TreeNode createMinimalBST(int[] arr, int start, int end) {
-        if (end < start) {
+    public static TreeNode createMinimalBST(int arr[], int start, int end) {
+        if (start > end) {
             return null;
         }
         int mid = (start + end) / 2;
-        TreeNode root = new TreeNode(arr[mid]);
-        root.setLeftChild(createMinimalBST(arr, start, mid - 1));
-        root.setRightChild(createMinimalBST(arr, mid + 1, end));
-        return root;
+        TreeNode node = new TreeNode(arr[mid]);
+        node.left = createMinimalBST(arr, start, mid - 1);
+        node.right = createMinimalBST(arr, mid + 1, end);
+        return node;
+    }
+
+    public static void insertInOrder(TreeNode root, int d) {
+        if (d <= root.val) {
+            if (root.left == null) {
+                root.left = new TreeNode(d);
+            } else {
+                insertInOrder(root.left, d);
+            }
+        } else {
+            if (root.right == null) {
+                root.right = new TreeNode(d);
+            } else {
+                insertInOrder(root.right, d);
+            }
+        }
     }
 }

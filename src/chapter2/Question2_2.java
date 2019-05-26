@@ -1,7 +1,6 @@
 package chapter2;
 
-import ctciLibrary.AsSortedMethods;
-import ctciLibrary.LinkedListNode;
+import ctciLibrary.ListNode;
 
 /**
  * @author yongrong
@@ -14,11 +13,11 @@ public class Question2_2 {
      * @param k 倒数第几个节点
      * @return 倒数第k个节点
      */
-    public static LinkedListNode FindKthToTail(LinkedListNode head, int k) {
+    public static ListNode FindKthToTail(ListNode head, int k) {
         if (head == null || k <= 0)
             return null;
-        LinkedListNode p1 = head;
-        LinkedListNode p2 = head;
+        ListNode p1 = head;
+        ListNode p2 = head;
         for (int i = 0; i < k - 1; i++) {
             if (p1 == null)
                 return null;
@@ -35,11 +34,12 @@ public class Question2_2 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        int N = 5;
-        LinkedListNode head = AsSortedMethods.randomLinkedList(N, 0, 5);
-        System.out.println(head.forward());
-        for (int k = 1; k <= N; k++)
-            System.out.println("The " + k + "th to last node is " + FindKthToTail(head, k).data);
+        int length = 5;
+        ListNode[] nodes = ListNode.randomListNodes(length, 1, length);
+        ListNode head = ListNode.buildList(nodes, length);
+        System.out.println(head.printForward());
+        for (int k = 1; k <= length; k++)
+            System.out.println("The " + k + "th to last node is " + FindKthToTail(head, k).val);
     }
 
 }

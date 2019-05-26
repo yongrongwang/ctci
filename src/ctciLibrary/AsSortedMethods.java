@@ -44,14 +44,4 @@ public class AsSortedMethods {
         }
     }
 
-    public static LinkedListNode randomLinkedList(int N, int min, int max) {
-        LinkedListNode head = new LinkedListNode(randomIntInRange(min, max), null, null);
-        LinkedListNode first = head;
-        for (int i = 1; i < N; i++) {
-            LinkedListNode second = new LinkedListNode(randomIntInRange(min, max), null, null);
-            first.setNext(second);
-            first = second;
-        }
-        return head;
-    }
 }
