@@ -10,14 +10,49 @@ import ctciLibrary.TreeNode;
  */
 public class Question4_4 {
 
-    public static ListNode getTreeLevel(TreeNode root, int dep) {
-        ListNode node = new ListNode(0);
-        return node;
-    }
-
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+        int length = 40;
+        int[] arr = TreeNode.sortedArray(length);
+        TreeNode root = TreeNode.createTreeFromArray(arr, arr.length);
+        int max = (int) (Math.log(arr.length) / Math.log(2)) + 1;
+        for (int dep = 1; dep <= max; dep++) {
+            System.out.print("dep = " + dep + ", ");
+            TreeLevel level = new TreeLevel();
+            ListNode head = level.getTreeLevel(root, dep);
+            System.out.println("tree level" + ": " + head.printForward());
+        }
+    }
 
+}
+
+class TreeLevel {
+    ListNode head = null;
+    ListNode p = head;
+
+    /**
+     * 使用深度优先的遍历方式，每次向下遍历一层就对dep减去一，当dep为一的时候表明到了指定深度的层次，然后构建链表
+     * @param root
+     * @param dep
+     * @return
+     */
+    public ListNode getTreeLevel(TreeNode root, int dep) {
+        if (root == null || dep <= 0) {
+            return null;
+        }
+        if (dep == 1) {
+            if (head == null) {
+                head = new ListNode(root.val);
+                p = head;
+            } else {
+                p.next = new ListNode(root.val);
+                p = p.next;
+            }
+        } else {
+            getTreeLevel(root.left, dep - 1);
+            getTreeLevel(root.right, dep - 1);
+        }
+        return head;
     }
 
 }
