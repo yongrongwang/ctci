@@ -9,6 +9,12 @@ import ctciLibrary.AsSortedMethods;
  */
 public class Question4_7 {
 
+    /**
+     * 满二叉树的父节点和子节点关系为root = child / 2，如果a != b，则将较大者除以2，如此循环直到a == b 
+     * @param a
+     * @param b
+     * @return
+     */
     public static int getLCA(int a, int b) {
         while (a != b) {
             if (a > b) {
