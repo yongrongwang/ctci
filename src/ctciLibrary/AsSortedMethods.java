@@ -29,6 +29,16 @@ public class AsSortedMethods {
         return mat;
     }
 
+    public static String toBinaryString(int a) {
+        String s = "";
+        while (a != 0) {
+            int last = a & 1;
+            s = last + s;
+            a = a >> 1;
+        }
+        return s;
+    }
+
     public static void printMatrix(int[][] mat) {
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat[i].length; j++) {
