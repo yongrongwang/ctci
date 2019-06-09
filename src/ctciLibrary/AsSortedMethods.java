@@ -31,7 +31,7 @@ public class AsSortedMethods {
 
     public static String toBinaryString(int a) {
         String s = "";
-        while (a != 0) {
+        for (int i = 0; i < 32; i++) {
             int last = a & 1;
             s = last + s;
             a = a >> 1;
